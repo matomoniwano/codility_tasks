@@ -10,12 +10,12 @@
 # N is an integer within the range [1..2,147,483,647].
 
 def solution(N):
-    binarynum = str(bin(N)[2:])
-    index = [i for i,d in enumerate(binarynum) if d=='1']
+    binarynum = str(bin(N)[2:]) # Convert inpu number into binary representation
+    index = [i for i,d in enumerate(binarynum) if d=='1'] # detect all the position of 1 in the binary representation
     length = len(index) - 1 
     bgap = 0
     while length > 0:
-        num = index[length] - index[length -1]
+        num = index[length] - index[length -1] # Retrieve binary gap
         if bgap <= num - 1:
             bgap = num - 1
         length = length - 1 
